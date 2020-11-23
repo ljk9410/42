@@ -12,7 +12,38 @@
 
 #include "get_next_line.h"
 
-int		get_next_line(int fd, char **line)
+static int	check_new_line(char *backup, char **line)
+{
+	size_t	i;
+	char	*temp;
+
+	i = 0;
+	while (backup[i] != '\n' && backup[i] != '\0')
+		i++;
+	if (backup[i] == '\n')
+	{
+		*line = ft_substr(backup, 0, i);
+		temp = ft_strdup(&backup[i + 1]);
+		free(backup);
+		backup = temp;
+	}
+	else
+	{
+		*line = ft_substr(backup, 0, i);
+		free(backup);
+		return (0);
+	}
+	return (1);
+}
+
+static int	get_result(char *backup, char **line)
+{
+	if (!check_new_line(backup, line))
+		return (0);
+	return (1);
+}
+
+int			get_next_line(int fd, char **line)
 {
 	static char	*backup;
 	char		buf[BUFFER_SIZE + 1];
@@ -24,7 +55,7 @@ int		get_next_line(int fd, char **line)
 	{
 		buf[BUFFER_SIZE] = '\0';
 		if (!backup)
-			backup = ft_strdup("");
+			backup = ft_strdup(buf);
 		else
 		{
 			temp = ft_strjoin(backup, buf);
@@ -34,5 +65,5 @@ int		get_next_line(int fd, char **line)
 		if (ft_strchr(backup, '\n'))
 				break ;
 	}
-	return (0);
+	return (get_result(backup, line));
 }
