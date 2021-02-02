@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 12:14:04 by jung-lee          #+#    #+#             */
-/*   Updated: 2020/12/18 15:05:14 by jung-lee         ###   ########.fr       */
+/*   Created: 2020/12/18 15:32:17 by jung-lee          #+#    #+#             */
+/*   Updated: 2020/12/18 15:32:58 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static int		put_new_line(char **backup, char **line, int fd)
 {
