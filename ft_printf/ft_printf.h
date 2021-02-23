@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 11:44:55 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/20 16:57:30 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/02/20 17:39:33 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int                 ft_printf(const char *format, ...);
 int                 is_conversion(char c);
 int                 check_options(const char *format, int i);
 void                init_struct();
+void                check_conversion();
 size_t	            ft_strlen(const char *str);
 int	                ft_atoi(const char *str);
 char	            *ft_strchr(const char *str, int c);
