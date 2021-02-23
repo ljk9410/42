@@ -68,3 +68,50 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * n);
 }
+
+long long	int_len(long long n)
+{
+	long long	len;
+
+	len = 0;
+	if (n <= 0)
+	{
+		len++;
+		n = n * -1;
+	}
+	while (n > 0)
+	{
+		len++;
+		n = n / 10;
+	}
+	return (len);
+}
+
+char		*ft_itoa(int n)
+{
+	long long	size;
+	long long	num;
+	char		*result;
+	int			sign;
+
+	num = (long long)n;
+	size = int_len(num);
+	sign = 1;
+	if (!(result = (char *)malloc(sizeof(char) * size + 1)))
+		return (NULL);
+	if (num < 0)
+	{
+		num = num * -1;
+		sign = -1;
+	}
+	result[0] = '0';
+	result[size--] = '\0';
+	while (num != 0)
+	{
+		result[size--] = num % 10 + '0';
+		num = num / 10;
+	}
+	if (sign == -1)
+		result[0] = '-';
+	return (result);
+}

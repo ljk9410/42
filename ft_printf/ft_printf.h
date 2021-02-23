@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 11:44:55 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/20 17:39:33 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/02/23 15:07:26 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,13 @@ int                 ft_printf(const char *format, ...);
 int                 is_conversion(char c);
 int                 check_options(const char *format, int i);
 void                init_struct();
-void                check_conversion();
+void                check_conversion(va_list ap);
+void				print_conversion_c(va_list ap);
+void				print_conversion_s(va_list ap);
+void				print_conversion_d(va_list ap);
 size_t	            ft_strlen(const char *str);
 int	                ft_atoi(const char *str);
 char	            *ft_strchr(const char *str, int c);
+char		        *ft_itoa(int n);
+void				ft_putstr(char *str);
 #endif

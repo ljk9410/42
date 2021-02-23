@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 14:43:35 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/23 10:49:38 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/02/23 14:16:49 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,9 @@ int     handle_width_precision(const char *format, int i, int dot)
 {
     char        *str;
     int         len;
-    int         idx;
-    int         j;
+	int			idx;
 
     len = 0;
-    idx = i;
     while (format[i] >= '0' && format[i] <= '9')
     {
         len++;
@@ -38,15 +36,13 @@ int     handle_width_precision(const char *format, int i, int dot)
     }
     if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
         return (-1); // 나중에 error 처리
-    j = 0;
-    while (len)
+    idx = i;
+	str[len] = 0;
+	while (len)
     {
-        str[j] = format[idx];
-        j++;
-        idx++;
+        str[len - 1] = format[--idx];
         len--;
     }
-    str[j] = 0;
     if (dot == 0)
         g_opts.width = ft_atoi(str);
     else
@@ -76,5 +72,5 @@ int     check_options(const char *format, int i)
         i++;
     }
     g_opts.type = format[i];
-    return (i);
+	return (i);
 }

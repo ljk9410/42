@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/14 21:51:27 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/23 14:48:21 by jung-lee         ###   ########.fr       */
+/*   Created: 2021/02/23 14:46:36 by jung-lee          #+#    #+#             */
+/*   Updated: 2021/02/23 14:49:07 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int				ft_printf(const char *format, ...)
+void	ft_putstr(char *str)
 {
-    va_list     ap;
-    int         i;
+	int	i;
 
-    va_start(ap, format);
-    i = 0;
-    while (format[i] != 0)
-    {
-        if (format[i] != '%')
-            write(1, &format[i], 1);
-        else
-        {
-        	init_struct();
-        	i = check_options(format, i + 1);
-			check_conversion(ap);
-        }
-        i++;
-    }
-    va_end(ap);
-    return (0);
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }
