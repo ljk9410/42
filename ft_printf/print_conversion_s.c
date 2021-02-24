@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 15:06:51 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/24 16:00:20 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/02/24 17:34:47 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,26 +38,27 @@ int		check_width(int len)
 	return (check_w);
 }
 
-void	ft_putstr_width(char *str, int len)
-{
-	if (g_opts.zero == 0)
-	{
-		print_space(len);
-		ft_putstr(str);
-	}
-	else
-	{
-		ft_putstr(str);
-		print_space(len);
-	}
-}
-
 void	print_output(char *str, int check_p, int check_w, int len)
 {
-	if (check_p == 1 && check_w == 0)
+	if (g_opts.no_options == 1)
+		ft_putstr(str);
+	else if (check_p == 1 && check_w == 0)
 		ft_putstr(str);
 	else if (check_p == 1 && check_w == 1)
 		ft_putstr_width(str, len);
+	else if (check_p == 2)
+		print_space(0);
+	else if (check_p == 3 && check_w == 0)
+		ft_putstr_precision(str);
+	else if (check_p == 3 && check_w == 1)
+		ft_putstr_width(str, g_opts.precision);
+	else if (check_p == 4 && check_w == 0)
+		ft_putstr(str);
+	else if (check_p == 4 && check_w == 1)
+	{
+		g_opts.precision = len;
+		ft_putstr_width(str, len);
+	}
 }
 
 void	print_conversion_s(va_list ap)
@@ -67,8 +68,11 @@ void	print_conversion_s(va_list ap)
 	int		check_p;
 	int		check_w;
 
+	check_p = 0;
+	check_w = 0;
 	handle_width_star(ap);
-	handle_precision_star(ap);
+	if (g_opts.precision_star == 1)
+		g_opts.precision = va_arg(ap, int);
 	str = va_arg(ap, char *);
 	len = ft_strlen(str);
 	check_p = check_precision(len);

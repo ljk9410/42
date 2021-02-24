@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 11:01:56 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/24 15:50:21 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/02/24 17:33:34 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,6 @@ void		handle_width_star(va_list ap)
 	}
 }
 
-void		handle_precision_star(va_list ap)
-{
-	if (g_opts.precision_star == 1)
-		g_opts.precision = va_arg(ap, int);
-}
-
 void		print_space(int len)
 {
 	int i;
@@ -43,5 +37,43 @@ void		print_space(int len)
 			write(1, " ", 1);
 			i--;
 		}
+	}
+}
+
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+}
+
+void	ft_putstr_precision(char *str)
+{
+	int i;
+
+	i = 0;
+	while (i < g_opts.precision)
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+}
+
+void	ft_putstr_width(char *str, int len)
+{
+	if (g_opts.minus == 0)
+	{
+		print_space(len);
+		ft_putstr_precision(str);
+	}
+	else
+	{
+		ft_putstr_precision(str);
+		print_space(len);
 	}
 }

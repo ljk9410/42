@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:52:25 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/24 15:53:52 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/02/24 16:13:49 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void	init_struct(void)
 	g_opts.no_precision = 0;
 	g_opts.precision_star = 0;
 	g_opts.type = 0;
+	g_opts.no_options = 0;
 }
