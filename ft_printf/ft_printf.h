@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 11:44:55 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/24 13:48:33 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:34:01 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void				print_conversion_s(va_list ap);
 void				print_conversion_d(va_list ap);
 void				handle_width_star(va_list ap);
 void				handle_precision_star(va_list ap);
+void				print_space(int len);
 size_t	            ft_strlen(const char *str);
 int	                ft_atoi(const char *str);
 char	            *ft_strchr(const char *str, int c);

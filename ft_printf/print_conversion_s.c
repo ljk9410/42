@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 15:06:51 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/24 15:18:33 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/02/24 16:00:20 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,28 @@ int		check_width(int len)
 	return (check_w);
 }
 
+void	ft_putstr_width(char *str, int len)
+{
+	if (g_opts.zero == 0)
+	{
+		print_space(len);
+		ft_putstr(str);
+	}
+	else
+	{
+		ft_putstr(str);
+		print_space(len);
+	}
+}
+
+void	print_output(char *str, int check_p, int check_w, int len)
+{
+	if (check_p == 1 && check_w == 0)
+		ft_putstr(str);
+	else if (check_p == 1 && check_w == 1)
+		ft_putstr_width(str, len);
+}
+
 void	print_conversion_s(va_list ap)
 {
 	char	*str;
@@ -51,4 +73,5 @@ void	print_conversion_s(va_list ap)
 	len = ft_strlen(str);
 	check_p = check_precision(len);
 	check_w = check_width(len);
+	print_output(str, check_p, check_w, len);
 }
