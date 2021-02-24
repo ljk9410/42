@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 14:43:35 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/23 14:16:49 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/02/24 14:12:41 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ int     check_options(const char *format, int i)
             i = handle_width_precision(format , i, g_opts.dot);
         if (g_opts.dot == 1 && format[i] == '*')
             g_opts.precision_star = 1;
+		if (g_opts.dot == 1 && is_conversion(format[i + 1]))
+			g_opts.no_precision = 1;
         i++;
     }
     g_opts.type = format[i];

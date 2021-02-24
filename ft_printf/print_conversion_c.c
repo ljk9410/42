@@ -6,15 +6,15 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 14:31:51 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/23 16:41:45 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/02/24 14:20:11 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		print_space()
+void		print_space(void)
 {
-	int 	i;
+	int	i;
 
 	i = g_opts.width - 1;
 	while (i)
@@ -28,16 +28,8 @@ void		print_conversion_c(va_list ap)
 {
 	int		c;
 
-	if (g_opts.width_star == 1)
-	{
-		g_opts.width = va_arg(ap, int);
-		if (g_opts.width < 0)
-		{
-			g_opts.minus = 1;
-			g_opts.width *= -1;
-		}
-	}
-	c = va_arg(ap ,int);
+	handle_width_star(ap);
+	c = va_arg(ap, int);
 	if (g_opts.minus == 0)
 	{
 		print_space();
@@ -45,7 +37,7 @@ void		print_conversion_c(va_list ap)
 	}
 	else
 	{
-		print_space();
 		write(1, &c, 1);
+		print_space();
 	}
 }

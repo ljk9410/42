@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 11:44:55 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/23 15:07:26 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/02/24 13:48:33 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ typedef struct      s_options
     int             width;
     int             dot;
     int             precision;
-    int             precision_star;
+    int				no_precision;
+	int             precision_star;
     int             type;
 }                   t_options;
 t_options           g_opts;
@@ -37,6 +38,8 @@ void                check_conversion(va_list ap);
 void				print_conversion_c(va_list ap);
 void				print_conversion_s(va_list ap);
 void				print_conversion_d(va_list ap);
+void				handle_width_star(va_list ap);
+void				handle_precision_star(va_list ap);
 size_t	            ft_strlen(const char *str);
 int	                ft_atoi(const char *str);
 char	            *ft_strchr(const char *str, int c);

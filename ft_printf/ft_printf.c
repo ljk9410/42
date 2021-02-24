@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 21:51:27 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/23 14:48:21 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/02/24 11:29:17 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int				ft_printf(const char *format, ...)
 {
-    va_list     ap;
+    va_list     ap; // va_list 선언을 전역변수로 처리하면 어떨까?
     int         i;
 
     va_start(ap, format);
