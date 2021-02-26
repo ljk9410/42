@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 14:43:35 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/24 16:25:38 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/02/26 18:51:48 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int     is_conversion(char c)
     int         check;
 
     check = 0;
-    if (ft_strchr("cspdiuxX", (int) c))
+    if (ft_strchr("cspdiuxX%", (int) c))
         check = 1;
     return (check);
 }

@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 17:27:38 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/24 11:27:47 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/02/26 18:48:35 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ void    	check_conversion(va_list ap)
         print_conversion_x();
     if (g_opts.type == 'X')
         print_conversion_X();
-    if (g_opts.type == '%')
-        print_conversion_percent(); */
+*/   if (g_opts.type == '%')
+        print_conversion_percent(ap);
 }
