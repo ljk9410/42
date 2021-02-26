@@ -5,8 +5,8 @@ int     main()
 //	ft_printf("%c\n", 'c');
 //	ft_printf("%s\n", "hello world");
 //	ft_printf("%-18.15s\n", "hello world");
-	printf("%*.*%\n", 10, 5);
-	ft_printf("%*.*%\n", 10, 5);
+	printf("%*.*%\n", 10, -5);
+	ft_printf("%*.*%\n", 10, -5);
 	printf("minus: %d zero: %d width_star: %d width: %d dot: %d precision: %d, no_precision: %d,  p_star: %d type: %c",
          g_opts.minus,
          g_opts.zero,
