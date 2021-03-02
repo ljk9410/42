@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 17:27:38 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/26 18:48:35 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/03/02 14:25:17 by hmyoung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@ void    	check_conversion(va_list ap)
 		print_conversion_c(ap);
 	if (g_opts.type == 's')
 		print_conversion_s(ap);
-    if (g_opts.type == 'd')
-        print_conversion_d(ap);
-    /*if (g_opts.type == 'i')
-        print_conversion_i();
-    if (g_opts.type == 'u')
+	if (g_opts.type == 'd' || g_opts.type == 'i')
+		print_conversion_d(ap);
+    /*if (g_opts.type == 'u')
         print_conversion_u();
     if (g_opts.type == 'x')
         print_conversion_x();

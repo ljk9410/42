@@ -6,13 +6,13 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 11:01:56 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/26 18:41:08 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/03/02 14:59:25 by hmyoung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		handle_width_star(va_list ap)
+void		handle_wp_star(va_list ap)
 {
 	if (g_opts.width_star == 1)
 	{
@@ -23,6 +23,8 @@ void		handle_width_star(va_list ap)
 			g_opts.width *= -1;
 		}
 	}
+	if (g_opts.precision_star == 1)
+		g_opts.precision = va_arg(ap, int);
 }
 
 void		print_space(int len)
@@ -57,10 +59,21 @@ void	ft_putstr_precision(char *str)
 	int i;
 
 	i = 0;
-	while (i < g_opts.precision)
+	if (g_opts.precision < 0)
 	{
-		write(1, &str[i], 1);
-		i++;
+		while (str[i])
+		{
+			write(1, &str[i], 1);
+			i++;
+		}
+	}
+	else
+	{
+		while (i < g_opts.precision)
+		{
+			write(1, &str[i], 1);
+			i++;
+		}
 	}
 }
 

@@ -4,10 +4,12 @@ int     main()
 {
 //	ft_printf("%c\n", 'c');
 //	ft_printf("%s\n", "hello world");
-//	ft_printf("%-18.15s\n", "hello world");
-	printf("%*.*%\n", 10, -5);
-	ft_printf("%*.*%\n", 10, -5);
-	printf("minus: %d zero: %d width_star: %d width: %d dot: %d precision: %d, no_precision: %d,  p_star: %d type: %c",
+//	ft_printf("%*.*s\n", 15, 5, "hello world");
+//	printf("%*.*s\n", 15, 5, "hello world");
+//	ft_printf("%*.*%\n", 10, -5);
+//	ft_printf("%*.*d\n", -10, 5, -123456);
+	printf("%0*.*d\n", -10, -1, -123456);
+/*	printf("minus: %d zero: %d width_star: %d width: %d dot: %d precision: %d, no_precision: %d,  p_star: %d type: %c",
          g_opts.minus,
          g_opts.zero,
          g_opts.width_star,
@@ -17,6 +19,6 @@ int     main()
 		 g_opts.no_precision,
          g_opts.precision_star,
          g_opts.type);
-
+*/
     return (0);
 }

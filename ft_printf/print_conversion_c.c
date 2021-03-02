@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 14:31:51 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/02/26 18:24:19 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/03/02 14:46:26 by hmyoung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		print_conversion_c(va_list ap)
 	int		c;
 	int		len;
 
-	handle_width_star(ap);
+	handle_wp_star(ap);
 	c = va_arg(ap, int);
 	len = 1;
 	if (g_opts.minus == 0)
