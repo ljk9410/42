@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 11:44:55 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/03/02 16:34:38 by hmyoung          ###   ########.fr       */
+/*   Updated: 2021/03/02 18:34:24 by hmyoung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,7 @@ void				ft_putstr(char *str);
 void	            ft_putstr_width(char *str, int len);
 void				ft_putstr_precision(char *str);
 void				ft_putnum(char *str, int len);
+void				ft_putnum_width(char *str, int len);
+void				ft_putnum_wp(char *str, int len);
+void				ft_putnum_wp_minus(char *str, int len);
 #endif
