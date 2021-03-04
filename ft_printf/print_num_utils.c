@@ -21,6 +21,7 @@ static void		print_zero(int len)
 	while (i < len)
 	{
 		write(1, "0", 1);
+		g_opts.result++;
 		i++;
 	}
 }
@@ -38,6 +39,7 @@ void			ft_putnum_width(char *str, int len)
 			if (str[0] == '-')
 			{
 				write(1, &str[0], 1);
+				g_opts.result++;
 				str++;
 			}
 			print_zero(g_opts.width - len);
@@ -96,4 +98,5 @@ void			ft_putnum_wp_minus(char *str, int len)
 			ft_putstr(str);
 		}
 	}
+	g_opts.result++;
 }

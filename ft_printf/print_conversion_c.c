@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 14:31:51 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/03/02 14:46:26 by hmyoung          ###   ########.fr       */
+/*   Updated: 2021/03/04 16:01:10 by hmyoung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ void		print_conversion_c(va_list ap)
 		write(1, &c, 1);
 		print_space(len);
 	}
+	g_opts.result++;
 }

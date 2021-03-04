@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 14:38:27 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/03/03 16:27:44 by hmyoung          ###   ########.fr       */
+/*   Updated: 2021/03/04 15:53:13 by hmyoung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,5 @@ void		print_conversion_diuxX(va_list ap)
 	check_p = check_precision(num_str, len);
 	check_w = check_width(len);
 	print_output(num_str, check_p, check_w, len);
-	free(num_str); //ft_itoa() malloc free
+	free(num_str);
 }

@@ -6,16 +6,16 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 11:44:55 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/03/03 16:09:21 by hmyoung          ###   ########.fr       */
+/*   Updated: 2021/03/04 16:04:48 by hmyoung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include <stdio.h> // 지워야 하는 헤더
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 typedef struct      s_options
 {
@@ -29,6 +29,7 @@ typedef struct      s_options
 	int             precision_star;
     int             type;
 	int				no_options;
+	int				result;
 }                   t_options;
 t_options           g_opts;
 int                 ft_printf(const char *format, ...);
@@ -40,6 +41,7 @@ void				print_conversion_c(va_list ap);
 void				print_conversion_s(va_list ap);
 void				print_conversion_diuxX(va_list ap);
 void				print_conversion_percent(va_list ap);
+void				print_conversion_p(va_list ap);
 void				handle_wp_star(va_list ap);
 void				print_space(int len);
 size_t	            ft_strlen(const char *str);
