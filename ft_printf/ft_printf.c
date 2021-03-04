@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 21:51:27 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/03/04 16:04:32 by hmyoung          ###   ########.fr       */
+/*   Updated: 2021/03/04 16:15:05 by hmyoung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ int				ft_printf(const char *format, ...)
         i++;
     }
     va_end(ap);
-	printf("result: %d\n", g_opts.result);
     return (g_opts.result);
 }
