@@ -23,6 +23,8 @@ long long	num_len_hex(long long n)
 	long long	len;
 
 	len = 0;
+	if (n == 0)
+		len++;
 	while (n > 0)
 	{
 		len++;
@@ -44,6 +46,8 @@ char 		*itoa_basic(long long n, long long size)
 		n = n * -1;
 		sign = -1;
 	}
+	if (n == 0)
+		result[0] = '0';
 	result[size--] = '\0';
 	while (n)
 	{
@@ -62,6 +66,8 @@ char		*itoa_hex(long long n, long long size, char type)
 
 	if (!(result = (char *)malloc(sizeof(char) * size + 1)))
 		return (NULL);
+	if (n == 0)
+		result[0] = '0';
 	result[size--] = '\0';
 	while (n)
 	{

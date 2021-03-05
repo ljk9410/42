@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 14:38:27 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/03/04 15:53:13 by hmyoung          ###   ########.fr       */
+/*   Updated: 2021/03/05 17:07:23 by hmyoung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ static int	check_precision(char *str, int len)
 	if (g_opts.precision < 0)
 		check_p = 0;
 	if (g_opts.precision == 0 || g_opts.no_precision == 1)
+	{
 		check_p = 1;
+		if (str[0] == '0')
+			check_p = 4;
+	}
 	if (g_opts.precision > 0 && g_opts.precision <= len)
 		check_p = 2;
 	if (g_opts.precision > 0 && g_opts.precision > len)
@@ -61,6 +65,8 @@ static void	print_output(char *num_str, int check_p, int check_w, int len)
 		else
 			ft_putnum_wp(num_str, len);
 	}
+	if (check_p == 4)
+		print_precision_zero();
 }
 
 char		*make_str(va_list ap)
