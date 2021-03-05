@@ -6,7 +6,7 @@
 #    By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/15 11:53:27 by jung-lee          #+#    #+#              #
-#    Updated: 2021/03/04 16:46:53 by hmyoung          ###   ########.fr        #
+#    Updated: 2021/03/05 17:03:15 by hmyoung          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS	= ./ft_printf.c \
 		  ./print_conversion_s.c \
 		  ./print_conversion_utils.c \
 		  ./print_num_utils.c \
+		  ./print_precision_zero.c \
 
 NAME 	= libftprintf.a
 OBJS	= $(SRCS:.c=.o)

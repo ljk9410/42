@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 11:44:55 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/03/04 16:17:35 by hmyoung          ###   ########.fr       */
+/*   Updated: 2021/03/05 17:36:57 by hmyoung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void				print_conversion_s(va_list ap);
 void				print_conversion_diuxX(va_list ap);
 void				print_conversion_percent(va_list ap);
 void				print_conversion_p(va_list ap);
+void				print_precision_zero(void);
 void				handle_wp_star(va_list ap);
 void				print_space(int len);
 size_t	            ft_strlen(const char *str);
