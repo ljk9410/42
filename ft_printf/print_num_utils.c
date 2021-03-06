@@ -14,7 +14,7 @@ void			ft_putnum(char *str, int len)
 	}
 }
 
-static void		print_zero(int len)
+void			print_zero(int len)
 {
 	int i;
 	i = 0;

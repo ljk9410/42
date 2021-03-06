@@ -22,6 +22,19 @@ static void		print_output(char *str)
 	g_opts.result += 2;
 }
 
+static void		print_output_nofit(char *str)
+{
+	if (str[0] == '0')
+		print_output(str);
+	else
+	{
+		write(1, "0", 1);
+		write(1, "x", 1);
+		ft_putstr(str);
+	}
+	g_opts.result += 2;
+}
+
 void			print_conversion_p(va_list ap)
 {
 	long long	ptr;
@@ -30,6 +43,9 @@ void			print_conversion_p(va_list ap)
 	handle_wp_star(ap);
 	ptr = va_arg(ap, long long);
 	ptr_str = ft_itoa_base(ptr, 16, 'x');
-	print_output(ptr_str);
+	if (g_opts.width < 14)
+		print_output_nofit(ptr_str);
+	else
+		print_output(ptr_str);
 	free(ptr_str);
 }
