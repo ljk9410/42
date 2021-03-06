@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 14:43:35 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/03/03 13:24:37 by hmyoung          ###   ########.fr       */
+/*   Updated: 2021/03/06 15:18:01 by hmyoung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int     check_options(const char *format, int i)
     {
         if (format[i] == '-')
             g_opts.minus = 1;
-        if (format[i] == '0') // width 안에 0이 있는 경우 처리 필요
+        if (g_opts.dot == 0 && format[i] == '0')
             g_opts.zero = 1;
         if (g_opts.dot == 0 && format[i] == '*')
             g_opts.width_star = 1;
