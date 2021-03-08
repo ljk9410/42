@@ -22,10 +22,25 @@ static void		print_output(char *str)
 	g_opts.result += 2;
 }
 
+static void		print_output_null(char *str)
+{
+	if (g_opts.width <= 3)
+	{
+		write(1, "0", 1);
+		write(1, "x", 1);
+		ft_putstr(str);
+	}
+	else
+	{
+		print_output(str);
+		g_opts.result -= 2;
+	}
+}
+
 static void		print_output_nofit(char *str)
 {
-	if (str[0] == '0')
-		print_output(str);
+	if (ft_strlen(str) == 1)
+		print_output_null(str);
 	else
 	{
 		write(1, "0", 1);

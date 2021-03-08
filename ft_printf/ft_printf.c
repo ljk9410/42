@@ -6,11 +6,22 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 21:51:27 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/03/04 16:15:05 by hmyoung          ###   ########.fr       */
+/*   Updated: 2021/03/08 12:49:46 by hmyoung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int 			no_conversion(const char *format, int i)
+{
+	while (format[i] != '\0' && format[i] != ' ')
+	{
+		if (ft_strchr("csduixXp%", format[i]))
+			return (1);
+		i++;
+	}
+	return (-1);
+}
 
 int				ft_printf(const char *format, ...)
 {
@@ -29,7 +40,9 @@ int				ft_printf(const char *format, ...)
 		}
 		else
         {
-        	init_struct();
+			if (no_conversion(format, i + 1) == -1)
+				return (-1);
+			init_struct();
         	i = check_options(format, i + 1);
 			check_conversion(ap);
         }
