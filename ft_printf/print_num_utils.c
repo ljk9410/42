@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_num_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/09 16:11:04 by jung-lee          #+#    #+#             */
+/*   Updated: 2021/03/09 16:13:18 by jung-lee         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void			ft_putnum(char *str, int len)
+void	ft_putnum(char *str, int len)
 {
 	if (g_opts.minus == 1)
 	{
@@ -14,9 +26,10 @@ void			ft_putnum(char *str, int len)
 	}
 }
 
-void			print_zero(int len)
+void	print_zero(int len)
 {
 	int i;
+
 	i = 0;
 	while (i < len)
 	{
@@ -26,7 +39,7 @@ void			print_zero(int len)
 	}
 }
 
-void			ft_putnum_width(char *str, int len)
+void	ft_putnum_width(char *str, int len)
 {
 	if (g_opts.minus == 1)
 		ft_putnum(str, len);
@@ -48,7 +61,7 @@ void			ft_putnum_width(char *str, int len)
 	}
 }
 
-void			ft_putnum_wp(char *str, int len)
+void	ft_putnum_wp(char *str, int len)
 {
 	if (g_opts.precision >= g_opts.width)
 	{
@@ -72,7 +85,7 @@ void			ft_putnum_wp(char *str, int len)
 	}
 }
 
-void			ft_putnum_wp_minus(char *str, int len)
+void	ft_putnum_wp_minus(char *str, int len)
 {
 	str++;
 	if ((g_opts.precision + 1) >= g_opts.width)

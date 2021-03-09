@@ -6,13 +6,13 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 13:58:18 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/03/02 15:09:47 by hmyoung          ###   ########.fr       */
+/*   Updated: 2021/03/09 15:43:03 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_strlen(const char *str)
+size_t		ft_strlen(const char *str)
 {
 	const char *temp;
 
@@ -24,9 +24,9 @@ size_t	ft_strlen(const char *str)
 	return (temp - str);
 }
 
-char	*ft_strchr(const char *str, int c)
+char		*ft_strchr(const char *str, int c)
 {
-	char	*s;
+	char		*s;
 
 	s = (char *)str;
 	while (*s != '\0')
@@ -41,10 +41,10 @@ char	*ft_strchr(const char *str, int c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
-	int	n;
-	int	sign;
+	int			n;
+	int			sign;
 
 	while (*str == '\n' || *str == '\t' || *str == ' '
 			|| *str == '\v' || *str == '\f' || *str == '\r')

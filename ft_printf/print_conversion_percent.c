@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_conversion_percent.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jung-lee </var/mail/jung-lee>              +#+  +:+       +#+        */
+/*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/26 18:21:52 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/03/06 13:45:27 by hmyoung          ###   ########.fr       */
+/*   Created: 2021/03/09 16:07:56 by jung-lee          #+#    #+#             */
+/*   Updated: 2021/03/09 16:08:22 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,3 @@ void	print_conversion_percent(va_list ap)
 	}
 	g_opts.result++;
 }
-

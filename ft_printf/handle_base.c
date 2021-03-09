@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_base.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/09 15:43:15 by jung-lee          #+#    #+#             */
+/*   Updated: 2021/03/09 15:44:50 by jung-lee         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 long long	num_len(long long n)
@@ -33,7 +45,7 @@ long long	num_len_hex(long long n)
 	return (len);
 }
 
-char 		*itoa_basic(long long n, long long size)
+char		*itoa_basic(long long n, long long size)
 {
 	int			sign;
 	char		*result;
@@ -55,7 +67,7 @@ char 		*itoa_basic(long long n, long long size)
 		n = n / 10;
 	}
 	if (sign == -1)
-		result [0] = '-';
+		result[0] = '-';
 	return (result);
 }
 
@@ -90,7 +102,7 @@ char		*ft_itoa_base(long long n, int base, char type)
 {
 	char		*result;
 	long long	size;
-	
+
 	result = 0;
 	if (base == 10)
 	{
