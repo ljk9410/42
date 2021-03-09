@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 14:29:42 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/03/09 14:44:47 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/03/09 15:16:29 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,17 +64,25 @@ static void		print_output_nofit(char *str)
 
 static void		print_output_null(void)
 {
-	if (g_opts.minus == 0)
+	if (g_opts.width <= 2)
 	{
-		print_space(2);
 		write(1, "0", 1);
 		write(1, "x", 1);
 	}
 	else
 	{
-		write(1, "0", 1);
-		write(1, "x", 1);
-		print_space(2);
+		if (g_opts.minus == 0)
+		{
+			print_space(2);
+			write(1, "0", 1);
+			write(1, "x", 1);
+		}
+		else
+		{
+			write(1, "0", 1);
+			write(1, "x", 1);
+			print_space(2);
+		}
 	}
 	g_opts.result += 2;
 }
@@ -83,6 +91,7 @@ void			print_conversion_p(va_list ap)
 {
 	long long	ptr;
 	char		*ptr_str;
+	int			len;
 
 	handle_wp_star(ap);
 	ptr = va_arg(ap, long long);
@@ -91,7 +100,8 @@ void			print_conversion_p(va_list ap)
 	else
 	{
 		ptr_str = ft_itoa_base(ptr, 16, 'x');
-		if (g_opts.width < 14)
+		len = ft_strlen(ptr_str);
+		if (g_opts.width < (len + 2))
 			print_output_nofit(ptr_str);
 		else
 			print_output(ptr_str);
