@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 15:06:51 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/03/05 16:26:44 by hmyoung          ###   ########.fr       */
+/*   Updated: 2021/03/09 11:12:57 by hmyoung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,12 @@ static int	check_width(int len)
 {
 	int	check_w;
 
-	if (g_opts.dot == 1 && g_opts.precision <= len)
+	if (g_opts.dot == 1 && g_opts.precision > 0
+			&& g_opts.precision <= len)
 		len = g_opts.precision;
 	if (g_opts.width <= len)
 		check_w = 0;
-	else
+	if (g_opts.width > len)
 		check_w = 1;
 	return (check_w);
 }
