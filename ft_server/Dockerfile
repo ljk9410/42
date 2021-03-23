@@ -12,4 +12,6 @@ RUN		apt-get -y install nginx \
 
 COPY	./srcs/* /tmp
 
+EXPOSE	80 443
+
 CMD		bash /tmp/run.sh
