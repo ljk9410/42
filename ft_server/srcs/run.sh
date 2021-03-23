@@ -16,7 +16,22 @@ chmod 600 etc/ssl/certs/localhost.dev.crt etc/ssl/private/localhost.dev.key
 
 # Nginx config file
 rm /etc/nginx/sites-available/default
-mv /tmp/default /etc/nginx/sites-available/
+for (( ; ; ))
+do
+    echo -n "autoindex on/off?: "
+    read autoindex;
+    if [ "${autoindex}" = "on" ]; then
+        mv /tmp/default_on /tmp/default
+        mv /tmp/default /etc/nginx/sites-available/
+        break
+    elif [ "${autoindex}" = "off" ]; then
+        mv /tmp/default_off /tmp/default
+        mv /tmp/default /etc/nginx/sites-available/
+        break
+    else
+        echo "just put 'on' or 'off' !!!"
+    fi
+done
 
 # Wordpress
 wget https://wordpress.org/latest.tar.gz
@@ -35,3 +50,4 @@ mysql < var/www/html/phpmyadmin/sql/create_tables.sql
 
 service nginx start
 service php7.3-fpm start
+bash

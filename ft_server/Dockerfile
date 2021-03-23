@@ -10,7 +10,7 @@ RUN		apt-get -y install nginx \
 		vim \
 		wget
 
-COPY	./srcs/* /tmp
+COPY	./srcs/* /tmp/
 
 EXPOSE	80 443
 
