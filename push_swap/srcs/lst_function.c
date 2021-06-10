@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 15:43:39 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/06/08 20:13:20 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/06/10 16:45:24 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,8 @@ void		add_lst_back(t_struct *node, int n)
 	temp->next = new;
 	new->value = n;
 	new->next = NULL;
+}
+
+void		add_new_node(t_struct *node)
+{
 }
