@@ -37,7 +37,8 @@ void			push_swap(t_struct *head_a, t_struct *head_b)
 	pb(head_a, head_b);
 	pb(head_a, head_b);
 	pb(head_a, head_b);
-	ss(head_a, head_b);
+	pb(head_a, head_b);
+	rrr(head_a, head_b);
 }
 
 int				main(int argc, char **argv)

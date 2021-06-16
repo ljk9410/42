@@ -30,4 +30,10 @@ void				pb(t_struct *head_a, t_struct *head_b);
 void				sa(t_struct *head_a);
 void				sb(t_struct	*head_b);
 void				ss(t_struct *head_a, t_struct *head_b);
+void				ra(t_struct *head_a);
+void				rb(t_struct	*head_b);
+void				rr(t_struct *head_a, t_struct *head_b);
+void				rra(t_struct *head_a);
+void				rrb(t_struct *head_b);
+void				rrr(t_struct *head_a, t_struct *head_b);
 #endif
