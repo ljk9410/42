@@ -34,9 +34,10 @@ void			init_stack(t_struct *head_a, int argc, char **argv)
 
 void			push_swap(t_struct *head_a, t_struct *head_b)
 {
+	pb(head_a, head_b);
+	pb(head_a, head_b);
 	pa(head_a, head_b);
-	pa(head_a, head_b);
-	pa(head_a, head_b);
+	pb(head_a, head_b);
 }
 
 int				main(int argc, char **argv)

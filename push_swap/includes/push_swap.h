@@ -23,4 +23,8 @@ typedef struct		s_struct
 }					t_struct;
 
 int					ft_atoi(const char *str);
+void				add_lst_back(t_struct *node, int n);
+t_struct			*find_lst_last(t_struct *node);
+void				pa(t_struct *head_a, t_struct *head_b);
+void				pb(t_struct *head_a, t_struct *head_b);
 #endif

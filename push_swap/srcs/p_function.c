@@ -17,6 +17,21 @@ void			pa(t_struct *head_a, t_struct *head_b)
 	t_struct	*temp_a;
 	t_struct	*temp_b;
 
+	if (head_b->next != NULL)
+	{
+		temp_b = head_b->next;
+		head_b->next = temp_b->next;
+		temp_a = head_a->next;
+		head_a->next = temp_b;
+		temp_b->next = temp_a;
+	}
+}
+
+void			pb(t_struct *head_a, t_struct *head_b)
+{
+	t_struct	*temp_a;
+	t_struct	*temp_b;
+
 	if (head_a->next != NULL)
 	{
 		temp_a = head_a->next;
