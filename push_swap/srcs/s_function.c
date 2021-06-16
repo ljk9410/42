@@ -1,0 +1,37 @@
+#include "../includes/push_swap.h"
+
+void			sa(t_struct *head_a)
+{
+	t_struct	*temp_up;
+	t_struct	*temp_down;
+
+	if ((head_a->next != NULL) && (head_a->next->next != NULL))
+	{
+		temp_up = head_a->next;
+		temp_down = head_a->next->next;
+		head_a->next = temp_down;
+		temp_up->next = temp_down->next;
+		head_a->next->next = temp_up;
+	}
+}
+
+void			sb(t_struct	*head_b)
+{
+	t_struct	*temp_up;
+	t_struct	*temp_down;
+
+	if ((head_b->next != NULL) && (head_b->next->next != NULL))
+	{
+		temp_up = head_b->next;
+		temp_down = head_b->next->next;
+		head_b->next = temp_down;
+		temp_up->next = temp_down->next;
+		head_b->next->next = temp_up;
+	}
+}
+
+void			ss(t_struct *head_a, t_struct *head_b)
+{
+	sa(head_a);
+	sb(head_b);
+}

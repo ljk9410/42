@@ -27,4 +27,7 @@ void				add_lst_back(t_struct *node, int n);
 t_struct			*find_lst_last(t_struct *node);
 void				pa(t_struct *head_a, t_struct *head_b);
 void				pb(t_struct *head_a, t_struct *head_b);
+void				sa(t_struct *head_a);
+void				sb(t_struct	*head_b);
+void				ss(t_struct *head_a, t_struct *head_b);
 #endif
