@@ -111,7 +111,7 @@ void            B_to_A(t_struct *head_a, t_struct *head_b, int n)
 
     rb_cnt = 0;
     pa_cnt = 0;
-	pivot = check_pivot;
+	pivot = check_pivot(head_b, n);
     if (n == 1)
     {
         pa(head_a, head_b);
