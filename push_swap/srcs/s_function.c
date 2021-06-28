@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   s_function.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/17 13:15:59 by jung-lee          #+#    #+#             */
+/*   Updated: 2021/06/17 13:17:09 by jung-lee         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 void			sa(t_struct *head_a)
@@ -15,7 +27,7 @@ void			sa(t_struct *head_a)
 	}
 }
 
-void			sb(t_struct	*head_b)
+void			sb(t_struct *head_b)
 {
 	t_struct	*temp_up;
 	t_struct	*temp_down;

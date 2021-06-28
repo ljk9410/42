@@ -6,12 +6,26 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:28:44 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/06/10 19:48:42 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/06/28 11:49:41 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include <stdio.h>
+
+void			check_stack(t_struct *head)
+{
+	t_struct	*temp;
+
+	temp = head->next;
+	printf("stack: ");
+	while (temp != NULL)
+	{
+		printf("%d ", temp->value);
+		temp = temp->next;
+	}
+	printf("\n");
+}
 
 int				error_check(int argc, char **argv)
 {
@@ -95,9 +109,12 @@ int				check_pivot(t_struct *node, int len)
 	int			pivot;
 
 	temp = node;
+	arr = NULL;
 	arr = fill_arr(node, arr, len);
 	quick_sort(arr, 0, len - 1);
 	pivot = arr[len / 2];
+	if (len % 2 == 0)
+		pivot = arr[len / 2 - 1];
 	free(arr);
 	return (pivot);
 }
@@ -111,23 +128,23 @@ void            B_to_A(t_struct *head_a, t_struct *head_b, int n)
 
     rb_cnt = 0;
     pa_cnt = 0;
-	pivot = check_pivot(head_b, n);
     if (n == 1)
     {
         pa(head_a, head_b);
         return ;
     }
+	pivot = check_pivot(head_b, n);
     while (n)
     {
         if (head_b->next->value > pivot)
         {
-            rb(head_b);
-            rb_cnt++;
+            pa(head_a, head_b);
+            pa_cnt++;
         }
         else
         {
-            pa(head_a, head_b);
-            pa_cnt++;
+            rb(head_b);
+            rb_cnt++;
         }
         n--;
     }
@@ -137,6 +154,10 @@ void            B_to_A(t_struct *head_a, t_struct *head_b, int n)
         rrb(head_b);
         temp--;
     }
+	printf("B_to_A\n");
+	check_stack(head_a);
+	check_stack(head_b);
+
     A_to_B(head_a, head_b, pa_cnt);
     B_to_A(head_a, head_b, rb_cnt);
 }
@@ -150,12 +171,12 @@ void            A_to_B(t_struct *head_a, t_struct *head_b, int n)
 
     ra_cnt = 0;
     pb_cnt = 0;
-	pivot = check_pivot(head_a, n);
     if (n == 1)
         return ;
+	pivot = check_pivot(head_a, n);
     while (n)
     {
-        if (head_a->next->value > pivot)
+		if (head_a->next->value > pivot)
         {
             ra(head_a);
             ra_cnt++;
@@ -173,6 +194,9 @@ void            A_to_B(t_struct *head_a, t_struct *head_b, int n)
         rra(head_a);
         temp--;
     }
+	printf("A_to_B\n");
+	check_stack(head_a);
+	check_stack(head_b);
     A_to_B(head_a, head_b, ra_cnt);
     B_to_A(head_a, head_b, pb_cnt);
 }
@@ -198,6 +222,7 @@ void			push_swap(t_struct *head_a, t_struct *head_b)
 
 	n = size_of_list(head_a);
 	A_to_B(head_a, head_b, n);
+	check_stack(head_a);
 }
 
 int				main(int argc, char **argv)
