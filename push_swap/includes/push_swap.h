@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:29:29 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/06/01 17:40:17 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/06/28 10:51:51 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,6 @@ void				rr(t_struct *head_a, t_struct *head_b);
 void				rra(t_struct *head_a);
 void				rrb(t_struct *head_b);
 void				rrr(t_struct *head_a, t_struct *head_b);
+void				A_to_B(t_struct *head_a, t_struct *head_b, int n);
+void				B_to_A(t_struct *head_a, t_struct *head_b, int n);
 #endif
