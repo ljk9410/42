@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:29:29 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/06/28 10:51:51 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/06/28 13:21:46 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+#include <stdio.h>
 
 typedef struct		s_struct
 {
@@ -25,6 +26,7 @@ typedef struct		s_struct
 int					ft_atoi(const char *str);
 void				add_lst_back(t_struct *node, int n);
 t_struct			*find_lst_last(t_struct *node);
+int					size_of_list(t_struct *list);
 void				pa(t_struct *head_a, t_struct *head_b);
 void				pb(t_struct *head_a, t_struct *head_b);
 void				sa(t_struct *head_a);
@@ -36,6 +38,10 @@ void				rr(t_struct *head_a, t_struct *head_b);
 void				rra(t_struct *head_a);
 void				rrb(t_struct *head_b);
 void				rrr(t_struct *head_a, t_struct *head_b);
-void				A_to_B(t_struct *head_a, t_struct *head_b, int n);
-void				B_to_A(t_struct *head_a, t_struct *head_b, int n);
+void				a_to_b(t_struct *head_a, t_struct *head_b, int n);
+void				b_to_a(t_struct *head_a, t_struct *head_b, int n);
+int					check_pivot(t_struct *node, int len);
+void				quick_sort(int *arr, int start, int end);
+int					get_partition(int *arr, int start, int end);
+int					*fill_arr(t_struct *node, int *arr, int len);
 #endif

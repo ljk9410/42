@@ -35,3 +35,18 @@ void		add_lst_back(t_struct *node, int n)
 	new->value = n;
 	new->next = NULL;
 }
+
+int				size_of_list(t_struct *list)
+{
+	int			n;
+	t_struct	*temp;
+
+	n = 0;
+	temp = list;
+	while (temp->next != NULL)
+	{
+		n++;
+		temp = temp->next;
+	}
+	return (n);
+}
