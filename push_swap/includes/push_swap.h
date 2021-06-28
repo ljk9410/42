@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:29:29 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/06/28 13:21:46 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/06/28 14:47:51 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ typedef struct		s_struct
 	int				value;
 	struct s_struct	*next;
 }					t_struct;
-
 int					ft_atoi(const char *str);
 void				add_lst_back(t_struct *node, int n);
 t_struct			*find_lst_last(t_struct *node);
@@ -44,4 +43,8 @@ int					check_pivot(t_struct *node, int len);
 void				quick_sort(int *arr, int start, int end);
 int					get_partition(int *arr, int start, int end);
 int					*fill_arr(t_struct *node, int *arr, int len);
+void				call_ra(t_struct *head_a, int *ra_cnt);
+void				call_rb(t_struct *head_b, int *rb_cnt);
+void				call_pa(t_struct *head_a, t_struct *head_b, int *pa_cnt);
+void				call_pb(t_struct *head_a, t_struct *head_b, int *pb_cnt);
 #endif
