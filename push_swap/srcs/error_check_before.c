@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 12:49:05 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/06/29 14:09:22 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/06/29 16:37:02 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int				write_error(void)
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	return (1);
 }
 

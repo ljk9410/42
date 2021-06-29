@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 13:15:46 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/06/29 15:54:16 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/06/29 16:54:47 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void			rra(t_struct *head_a)
 		last->next = temp;
 		last_before->next = NULL;
 	}
-	write(1, "rra\n", 4);
 }
 
 void			rrb(t_struct *head_b)
@@ -57,12 +56,10 @@ void			rrb(t_struct *head_b)
 		last->next = temp;
 		last_before->next = NULL;
 	}
-	write(1, "rrb\n", 4);
 }
 
 void			rrr(t_struct *head_a, t_struct *head_b)
 {
 	rra(head_a);
 	rrb(head_b);
-	write(1, "rrr\n", 4);
 }
