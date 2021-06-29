@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:29:29 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/06/29 13:40:15 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/06/29 14:11:51 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ long long			ft_atoi(const char *str);
 void				add_lst_back(t_struct *node, int n);
 t_struct			*find_lst_last(t_struct *node);
 int					size_of_list(t_struct *list);
-int					error_check(int argc, char **argv);
+int					error_check_before(int argc, char **argv);
+int					error_check_after(t_struct *head);
 int					write_error(void);
 void				pa(t_struct *head_a, t_struct *head_b);
 void				pb(t_struct *head_a, t_struct *head_b);
