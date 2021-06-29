@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 15:43:39 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/06/10 18:56:52 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/06/29 15:17:10 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int				size_of_list(t_struct *list)
 	t_struct	*temp;
 
 	n = 0;
-	temp = list;
-	while (temp->next != NULL)
+	temp = list->next;
+	while (temp != NULL)
 	{
 		n++;
 		temp = temp->next;

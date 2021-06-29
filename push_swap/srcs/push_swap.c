@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:28:44 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/06/29 14:10:00 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/06/29 15:52:33 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ void			push_swap(t_struct *head_a, t_struct *head_b)
 	int			n;
 
 	n = size_of_list(head_a);
+//	if (n == 2)
+//		sort_two();
+//	if (n == 3)
+//		sort_three();
+//	if (n == 5)
+//		sort_five();
 	a_to_b(head_a, head_b, n);
 }
 

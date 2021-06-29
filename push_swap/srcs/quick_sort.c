@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 13:13:20 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/06/28 14:50:17 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/06/29 15:49:42 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,3 +66,5 @@ void			a_to_b(t_struct *head_a, t_struct *head_b, int n)
 	a_to_b(head_a, head_b, ra_cnt);
 	b_to_a(head_a, head_b, pb_cnt);
 }
+
+
