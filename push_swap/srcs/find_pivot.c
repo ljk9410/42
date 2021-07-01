@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 13:08:39 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/06/28 13:08:42 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/01 13:37:04 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ int				*fill_arr(t_struct *node, int *arr, int len)
 	t_struct	*temp;
 	int			index;
 
-	temp = node->next;
+	temp = node;
 	index = 0;
 	arr = (int *)malloc(sizeof(int) * len);
-	while (temp != NULL)
+	while (index < len)
 	{
+		temp = temp->next;
 		arr[index] = temp->value;
 		index++;
-		temp = temp->next;
 	}
 	return (arr);
 }
@@ -70,11 +70,9 @@ void			quick_sort(int *arr, int start, int end)
 
 int				check_pivot(t_struct *node, int len)
 {
-	t_struct	*temp;
 	int			*arr;
 	int			pivot;
 
-	temp = node;
 	arr = NULL;
 	arr = fill_arr(node, arr, len);
 	quick_sort(arr, 0, len - 1);

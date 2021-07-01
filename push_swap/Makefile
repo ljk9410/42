@@ -8,8 +8,12 @@ SRCS_PS =	./srcs/push_swap.c \
 			./srcs/error_check_before.c \
 			./srcs/error_check_after.c \
 			./srcs/ft_atoi.c \
+			./srcs/ft_strdup.c \
 			./srcs/quick_sort.c \
 			./srcs/lst_function.c \
+			./srcs/operation_function.c \
+			./srcs/handle_operation_list.c \
+			./srcs/handle_free.c \
 
 NAME_PS = push_swap
 OBJS_PS = $(SRCS_PS:.c=.o)

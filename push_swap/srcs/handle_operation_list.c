@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   call_function.c                                    :+:      :+:    :+:   */
+/*   handle_operation_list.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 14:38:34 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/01 12:29:00 by jung-lee         ###   ########.fr       */
+/*   Created: 2021/07/01 12:33:24 by jung-lee          #+#    #+#             */
+/*   Updated: 2021/07/01 12:41:17 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void		call_ra(t_struct *head_a, int *ra_cnt, t_oper *op)
+void			handle_operation_list(t_oper *op)
 {
-	ra(head_a, op);
-	(*ra_cnt)++;
-}
+	t_oper		*temp;
+	size_t		len;
 
-void		call_rb(t_struct *head_b, int *rb_cnt, t_oper *op)
-{
-	rb(head_b, op);
-	(*rb_cnt)++;
-}
-
-void		call_pa(t_struct *head_a, t_struct *head_b, int *pa_cnt, t_oper *op)
-{
-	pa(head_a, head_b, op);
-	(*pa_cnt)++;
-}
-
-void		call_pb(t_struct *head_a, t_struct *head_b, int *pb_cnt, t_oper *op)
-{
-	pb(head_a, head_b, op);
-	(*pb_cnt)++;
+	temp = op->next;
+	while (temp->next != NULL)
+	{
+		len = ft_strlen(temp->operation);
+		if (len == 2)
+			write(1, temp->operation, 2);
+		else
+			write(1, temp->operation, 3);
+		write(1, "\n", 1);
+		temp = temp->next;
+	}
 }

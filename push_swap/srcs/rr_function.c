@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 13:15:46 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/06/29 16:54:47 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/01 12:27:34 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_struct		*find_last_before(t_struct *node)
 	return (temp);
 }
 
-void			rra(t_struct *head_a)
+void			rra(t_struct *head_a, t_oper *op)
 {
 	t_struct	*temp;
 	t_struct	*last;
@@ -39,9 +39,10 @@ void			rra(t_struct *head_a)
 		last->next = temp;
 		last_before->next = NULL;
 	}
+	add_op_list(op, "rra");
 }
 
-void			rrb(t_struct *head_b)
+void			rrb(t_struct *head_b, t_oper *op)
 {
 	t_struct	*temp;
 	t_struct	*last;
@@ -56,10 +57,11 @@ void			rrb(t_struct *head_b)
 		last->next = temp;
 		last_before->next = NULL;
 	}
+	add_op_list(op, "rrb");
 }
 
-void			rrr(t_struct *head_a, t_struct *head_b)
+void			rrr(t_struct *head_a, t_struct *head_b, t_oper *op)
 {
-	rra(head_a);
-	rrb(head_b);
+	rra(head_a, op);
+	rrb(head_b, op);
 }

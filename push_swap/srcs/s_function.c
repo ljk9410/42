@@ -6,13 +6,13 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 13:15:59 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/06/29 16:54:32 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/01 12:27:00 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void			sa(t_struct *head_a)
+void			sa(t_struct *head_a, t_oper *op)
 {
 	t_struct	*temp_up;
 	t_struct	*temp_down;
@@ -25,9 +25,10 @@ void			sa(t_struct *head_a)
 		temp_up->next = temp_down->next;
 		head_a->next->next = temp_up;
 	}
+	add_op_list(op, "sa");
 }
 
-void			sb(t_struct *head_b)
+void			sb(t_struct *head_b, t_oper *op)
 {
 	t_struct	*temp_up;
 	t_struct	*temp_down;
@@ -40,10 +41,11 @@ void			sb(t_struct *head_b)
 		temp_up->next = temp_down->next;
 		head_b->next->next = temp_up;
 	}
+	add_op_list(op, "sb");
 }
 
-void			ss(t_struct *head_a, t_struct *head_b)
+void			ss(t_struct *head_a, t_struct *head_b, t_oper *op)
 {
-	sa(head_a);
-	sb(head_b);
+	sa(head_a, op);
+	sb(head_b, op);
 }

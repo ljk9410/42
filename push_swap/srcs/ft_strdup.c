@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   call_function.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 14:38:34 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/01 12:29:00 by jung-lee         ###   ########.fr       */
+/*   Created: 2020/10/28 10:48:45 by jung-lee          #+#    #+#             */
+/*   Updated: 2021/07/01 10:57:19 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void		call_ra(t_struct *head_a, int *ra_cnt, t_oper *op)
+size_t		ft_strlen(const char *s)
 {
-	ra(head_a, op);
-	(*ra_cnt)++;
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
 
-void		call_rb(t_struct *head_b, int *rb_cnt, t_oper *op)
+char		*ft_strdup(const char *s)
 {
-	rb(head_b, op);
-	(*rb_cnt)++;
-}
+	size_t	size;
+	char	*ptr;
+	int		i;
 
-void		call_pa(t_struct *head_a, t_struct *head_b, int *pa_cnt, t_oper *op)
-{
-	pa(head_a, head_b, op);
-	(*pa_cnt)++;
-}
-
-void		call_pb(t_struct *head_a, t_struct *head_b, int *pb_cnt, t_oper *op)
-{
-	pb(head_a, head_b, op);
-	(*pb_cnt)++;
+	size = ft_strlen(s);
+	if (!(ptr = (char *)malloc(sizeof(char) * size + 1)))
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		ptr[i] = s[i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
 }

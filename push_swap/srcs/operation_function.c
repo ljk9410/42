@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   call_function.c                                    :+:      :+:    :+:   */
+/*   operation_function.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 14:38:34 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/01 12:29:00 by jung-lee         ###   ########.fr       */
+/*   Created: 2021/07/01 10:23:52 by jung-lee          #+#    #+#             */
+/*   Updated: 2021/07/01 12:40:54 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void		call_ra(t_struct *head_a, int *ra_cnt, t_oper *op)
+t_oper			*find_op_last(t_oper *node)
 {
-	ra(head_a, op);
-	(*ra_cnt)++;
+	t_oper		*temp;
+
+	temp = node;
+	if (!temp)
+		return (NULL);
+	while (temp->next != NULL)
+		temp = temp->next;
+	return (temp);
 }
 
-void		call_rb(t_struct *head_b, int *rb_cnt, t_oper *op)
+void			add_op_list(t_oper *op, char *operation)
 {
-	rb(head_b, op);
-	(*rb_cnt)++;
-}
+	t_oper		*new;
+	t_oper		*temp;
 
-void		call_pa(t_struct *head_a, t_struct *head_b, int *pa_cnt, t_oper *op)
-{
-	pa(head_a, head_b, op);
-	(*pa_cnt)++;
-}
-
-void		call_pb(t_struct *head_a, t_struct *head_b, int *pb_cnt, t_oper *op)
-{
-	pb(head_a, head_b, op);
-	(*pb_cnt)++;
+	new = (t_oper *)malloc(sizeof(t_oper));
+	temp = find_op_last(op);
+	temp->next = new;
+	new->operation = ft_strdup(operation);
+	new->next = NULL;
 }
