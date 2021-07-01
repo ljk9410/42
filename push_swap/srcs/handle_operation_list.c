@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:33:24 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/01 12:41:17 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/01 17:19:22 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void			handle_operation_list(t_oper *op)
 	size_t		len;
 
 	temp = op->next;
-	while (temp->next != NULL)
+	// operation list 최적화 함수
+	// 최적화된 리스트 출력
+	while (temp != NULL)
 	{
 		len = ft_strlen(temp->operation);
 		if (len == 2)
