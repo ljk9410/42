@@ -6,19 +6,19 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 15:00:37 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/06/29 13:39:41 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/02 16:14:41 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-long long		ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
 	long long	n;
 	int			sign;
 
 	while (*str == '\n' || *str == '\t' || *str == ' '
-			|| *str == '\v' || *str == '\f' || *str == '\r')
+		|| *str == '\v' || *str == '\f' || *str == '\r')
 		str++;
 	sign = 1;
 	if (*str == '+')
