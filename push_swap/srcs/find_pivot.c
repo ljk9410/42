@@ -6,13 +6,13 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 13:08:39 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/01 13:37:04 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/02 16:13:57 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int				*fill_arr(t_struct *node, int *arr, int len)
+int	*fill_arr(t_struct *node, int *arr, int len)
 {
 	t_struct	*temp;
 	int			index;
@@ -29,7 +29,7 @@ int				*fill_arr(t_struct *node, int *arr, int len)
 	return (arr);
 }
 
-int				get_partition(int *arr, int start, int end)
+int	get_partition(int *arr, int start, int end)
 {
 	int			pivot;
 	int			i;
@@ -56,7 +56,7 @@ int				get_partition(int *arr, int start, int end)
 	return (index);
 }
 
-void			quick_sort(int *arr, int start, int end)
+void	quick_sort(int *arr, int start, int end)
 {
 	int			index;
 
@@ -68,7 +68,7 @@ void			quick_sort(int *arr, int start, int end)
 	}
 }
 
-int				check_pivot(t_struct *node, int len)
+int	check_pivot(t_struct *node, int len)
 {
 	int			*arr;
 	int			pivot;
