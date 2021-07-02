@@ -6,22 +6,12 @@
 /*   By: minhkim <minhkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:33:24 by jung-lee          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2021/07/02 16:04:31 by jung-lee         ###   ########.fr       */
-=======
-/*   Updated: 2021/07/02 16:13:10 by minhkim          ###   ########.fr       */
->>>>>>> master
+/*   Updated: 2021/07/02 16:27:22 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-<<<<<<< HEAD
-void            handle_operation_list(t_oper *op)
-{
-//    optimize_operation(op);
-//    print_op_list(op);
-=======
 int				ft_strcmp(char *s1, char *s2)
 {
 	int			i;
@@ -230,5 +220,4 @@ void			handle_operation_list(t_oper *op)
 	optimize_operation(op);
 	
 	print_op_list(op);
->>>>>>> master
 }
