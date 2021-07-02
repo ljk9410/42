@@ -99,3 +99,8 @@ void	sort_five(t_struct *head_a, t_struct *head_b, int len, t_oper *op)
 	pa(head_a, head_b, op);
 	pa(head_a, head_b, op);
 }
+
+void find()
+{
+
+}
