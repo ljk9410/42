@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: minhkim <minhkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:28:44 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/02 16:38:17 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/02 19:43:24 by minhkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,25 @@ void	push_swap(t_struct *head_a, t_struct *head_b, t_oper *op)
 		a_to_b(head_a, head_b, n, op);
 }
 
-int	main(int argc, char **argv)
-{
-	t_struct	*head_a;
-	t_struct	*head_b;
-	t_oper		*op;
+// int	main(int argc, char **argv)
+// {
+// 	t_struct	*head_a;
+// 	t_struct	*head_b;
+// 	t_oper		*op;
 
-	if (error_check_before(argc, argv))
-		return (write_error());
-	head_a = (t_struct *)malloc(sizeof(t_struct));
-	head_b = (t_struct *)malloc(sizeof(t_struct));
-	op = (t_oper *)malloc(sizeof(t_oper));
-	head_a->next = NULL;
-	head_b->next = NULL;
-	op->next = NULL;
-	init_stack(head_a, argc, argv);
-	if (error_check_after(head_a))
-		return (write_error());
-	push_swap(head_a, head_b, op);
-	handle_operation_list(op);
-	handle_free(head_a, head_b, op);
-	return (0);
-}
+// 	if (error_check_before(argc, argv))
+// 		return (write_error());
+// 	head_a = (t_struct *)malloc(sizeof(t_struct));
+// 	head_b = (t_struct *)malloc(sizeof(t_struct));
+// 	op = (t_oper *)malloc(sizeof(t_oper));
+// 	head_a->next = NULL;
+// 	head_b->next = NULL;
+// 	op->next = NULL;
+// 	init_stack(head_a, argc, argv);
+// 	if (error_check_after(head_a))
+// 		return (write_error());
+// 	push_swap(head_a, head_b, op);
+// 	handle_operation_list(op);
+// 	handle_free(head_a, head_b, op);
+// 	return (0);
+// }
