@@ -6,11 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:29:29 by jung-lee          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2021/07/02 16:02:51 by jung-lee         ###   ########.fr       */
-=======
-/*   Updated: 2021/07/02 16:12:34 by minhkim          ###   ########.fr       */
->>>>>>> master
+/*   Updated: 2021/07/02 16:31:03 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +26,6 @@ typedef struct s_oper
 	char			*operation;
 	struct s_oper	*next;
 }					t_oper;
-<<<<<<< HEAD
 long long	ft_atoi(const char *str);
 char		*ft_strdup(const char *s);
 size_t		ft_strlen(const char *s);
@@ -72,7 +67,6 @@ void		sort_three_b(t_struct *head_b, t_oper *op);
 void		sort_five(t_struct *head_a, t_struct *head_b, int len, t_oper *op);
 int			find_max(t_struct *head);
 int			find_min(t_struct *head);
-=======
 long long			ft_atoi(const char *str);
 char				*ft_strdup(const char *s);
 size_t				ft_strlen(const char *s);
@@ -126,5 +120,4 @@ int					delete_operation(t_oper *op);
 void				optimize_operation(t_oper *op);
 void				handle_operation_list(t_oper *op);
 
->>>>>>> master
 #endif
