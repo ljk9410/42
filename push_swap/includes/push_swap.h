@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:29:29 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/01 12:47:32 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/02 11:29:01 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,10 @@ void				call_rb(t_struct *head_b, int *rb_cnt, t_oper *op);
 void				call_pa(t_struct *head_a, t_struct *head_b, int *pa_cnt, t_oper *op);
 void				call_pb(t_struct *head_a, t_struct *head_b, int *pb_cnt, t_oper *op);
 void				handle_free(t_struct *head_a, t_struct *head_b, t_oper *op);
+
+void				sort_two_a(t_struct *head_a, t_oper *op);
+void				sort_two_b(t_struct *head_b, t_oper *op);
+void				sort_three_a(t_struct *head_a, t_oper *op);
+void				sort_three_b(t_struct *head_b, t_oper *op);
+void				sort_five(t_struct *head_a, t_struct *head_b, int len, t_oper *op);
 #endif
