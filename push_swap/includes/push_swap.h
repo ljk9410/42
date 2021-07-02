@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: minhkim <minhkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 16:44:12 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/02 16:44:14 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/02 19:29:19 by minhkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include "../checker/get_next_line.h"
 
 typedef struct s_struct
 {
@@ -119,4 +120,7 @@ int			merge_operation(t_oper *op);
 int			delete_operation(t_oper *op);
 void		optimize_operation(t_oper *op);
 void		handle_operation_list(t_oper *op);
+int			already_sort(t_struct *head);
+void		init_stack(t_struct *head_a, int argc, char **argv);
+
 #endif
