@@ -6,13 +6,13 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 10:23:52 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/02 12:18:28 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/02 16:36:54 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_oper			*find_op_last(t_oper *node)
+t_oper	*find_op_last(t_oper *node)
 {
 	t_oper		*temp;
 
@@ -24,7 +24,7 @@ t_oper			*find_op_last(t_oper *node)
 	return (temp);
 }
 
-void			add_op_list(t_oper *op, char *operation)
+void	add_op_list(t_oper *op, char *operation)
 {
 	t_oper		*new;
 	t_oper		*temp;
