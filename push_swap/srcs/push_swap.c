@@ -6,13 +6,13 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:28:44 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/02 12:10:43 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/02 16:38:17 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void			init_stack(t_struct *head_a, int argc, char **argv)
+void	init_stack(t_struct *head_a, int argc, char **argv)
 {
 	int			i;
 	int			n;
@@ -26,7 +26,7 @@ void			init_stack(t_struct *head_a, int argc, char **argv)
 	}
 }
 
-void			push_swap(t_struct *head_a, t_struct *head_b, t_oper *op)
+void	push_swap(t_struct *head_a, t_struct *head_b, t_oper *op)
 {
 	int			n;
 
@@ -41,7 +41,7 @@ void			push_swap(t_struct *head_a, t_struct *head_b, t_oper *op)
 		a_to_b(head_a, head_b, n, op);
 }
 
-int				main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_struct	*head_a;
 	t_struct	*head_b;

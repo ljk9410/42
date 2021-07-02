@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 14:46:00 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/02 15:18:08 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/02 16:39:37 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,9 +98,4 @@ void	sort_five(t_struct *head_a, t_struct *head_b, int len, t_oper *op)
 	sort_two_b(head_b, op);
 	pa(head_a, head_b, op);
 	pa(head_a, head_b, op);
-}
-
-void find()
-{
-	return ;
 }

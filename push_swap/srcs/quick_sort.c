@@ -6,13 +6,13 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 13:13:20 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/02 16:03:54 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/02 16:38:39 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void			b_to_a(t_struct *head_a, t_struct *head_b, int n, t_oper *op)
+void	b_to_a(t_struct *head_a, t_struct *head_b, int n, t_oper *op)
 {
 	int			cnt;
 	int			rb_cnt;
@@ -41,7 +41,7 @@ void			b_to_a(t_struct *head_a, t_struct *head_b, int n, t_oper *op)
 	b_to_a(head_a, head_b, rb_cnt, op);
 }
 
-void			a_to_b(t_struct *head_a, t_struct *head_b, int n, t_oper *op)
+void	a_to_b(t_struct *head_a, t_struct *head_b, int n, t_oper *op)
 {
 	int			ra_cnt;
 	int			cnt;
