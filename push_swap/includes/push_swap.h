@@ -68,4 +68,6 @@ void				sort_three_b(t_struct *head_b, t_oper *op);
 void				sort_five(t_struct *head_a, t_struct *head_b, int len, t_oper *op);
 int					find_max(t_struct *head);
 int					find_min(t_struct *head);
+
+int					sort_check_a(t_struct *head_a);
 #endif
