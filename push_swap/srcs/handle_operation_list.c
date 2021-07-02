@@ -6,7 +6,7 @@
 /*   By: minhkim <minhkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:33:24 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/02 16:27:22 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/02 17:13:30 by minhkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ int				ft_strcmp(char *s1, char *s2)
 			return (0);
 		i++;
 	}
-	if (s1[i] == '\0' || s2[i] == '\0')
-		return (0);
-	return (1);
+	if (s1[i] == '\0' && s2[i] == '\0')
+		return (1);
+	return (0);
 }
 
 int				return_merge_case(t_oper *op)
 {
 	t_oper		*temp;
 
-	temp = op->next;
+	temp = op;
 	if (ft_strcmp(temp->operation, "ra") && ft_strcmp(temp->next->operation, "rb"))
 		return (1);
 	if (ft_strcmp(temp->operation, "rb") && ft_strcmp(temp->next->operation, "ra"))
@@ -52,7 +52,7 @@ int				return_delete_case(t_oper *op)
 {
 	t_oper		*temp;
 
-	temp = op->next;
+	temp = op;
 	if (ft_strcmp(temp->operation, "pa") && ft_strcmp(temp->next->operation, "pb"))
 		return (1);
 	if (ft_strcmp(temp->operation, "pb") && ft_strcmp(temp->next->operation, "pa"))
@@ -111,16 +111,14 @@ void			delete_op_list_in_middle(t_oper *op, int num)
 	temp = op->next;
 	if (num == 1)
 	{
+		op->next = op->next->next;
 		free(temp->operation);
 		free(temp);
-		op->next = NULL;
 		return ;
 	}
-	while (temp != NULL && index < num - 1)
-	{
+	num = num - 2;
+	while (num--)
 		temp = temp->next;
-		index++;
-	}
 	temp_op_node = temp->next;
 	temp->next = temp_op_node->next;
 	free(temp_op_node->operation);
@@ -214,10 +212,8 @@ void			optimize_operation(t_oper *op)
 		;
 }
 
-
 void			handle_operation_list(t_oper *op)
 {
 	optimize_operation(op);
-	
 	print_op_list(op);
 }
