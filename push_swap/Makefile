@@ -15,6 +15,7 @@ SRCS_PS =	./srcs/push_swap.c \
 			./srcs/handle_operation_list.c \
 			./srcs/handle_free.c \
 			./srcs/sort_function.c \
+			./srcs/find_minmax.c \
 
 NAME_PS = push_swap
 OBJS_PS = $(SRCS_PS:.c=.o)

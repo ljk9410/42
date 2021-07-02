@@ -6,7 +6,7 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:29:29 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/02 14:49:16 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/02 16:12:34 by minhkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,16 @@ void				sort_three_b(t_struct *head_b, t_oper *op);
 void				sort_five(t_struct *head_a, t_struct *head_b, int len, t_oper *op);
 int					find_max(t_struct *head);
 int					find_min(t_struct *head);
+int					ft_strcmp(char *s1, char *s2);
+int					return_merge_case(t_oper *op);
+int					return_delete_case(t_oper *op);
+void				print_op_list(t_oper *op);
+t_oper *			create_op_list_node(char *oper);
+void				delete_op_list_in_middle(t_oper *op, int num);
+void				add_op_list_in_middle(t_oper *op, t_oper *node, int num);
+int					merge_operation(t_oper *op);
+int					delete_operation(t_oper *op);
+void				optimize_operation(t_oper *op);
+void				handle_operation_list(t_oper *op);
+
 #endif
