@@ -6,7 +6,7 @@
 /*   By: minhkim <minhkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:28:44 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/05 15:15:21 by minhkim          ###   ########.fr       */
+/*   Updated: 2021/07/05 18:09:11 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ int	main(int argc, char **argv)
 	push_swap(head_a, head_b, op);
 	handle_operation_list(op);
 	handle_free(head_a, head_b, op);
+	hello
 	return (0);
 }
