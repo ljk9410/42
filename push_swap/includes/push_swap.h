@@ -16,7 +16,6 @@ typedef struct s_oper
 	char			*operation;
 	struct s_oper	*next;
 }					t_oper;
-
 long long	ft_atoi(const char *str);
 char		*ft_strdup(const char *s);
 size_t		ft_strlen(const char *s);
@@ -113,5 +112,6 @@ void		handle_operation_list(t_oper *op);
 int			already_sort(t_struct *head);
 void		init_stack(t_struct *head_a, int argc, char **argv);
 void		free_stack(t_struct *node);
-
+void		merge_by_case(t_oper *op, int index, int merge_case);
+int			r_check(t_oper	*temp);
 #endif
