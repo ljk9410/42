@@ -6,7 +6,7 @@
 /*   By: minhkim <minhkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 16:44:12 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/02 19:29:19 by minhkim          ###   ########.fr       */
+/*   Updated: 2021/07/05 15:45:44 by minhkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ typedef struct s_oper
 	char			*operation;
 	struct s_oper	*next;
 }					t_oper;
+typedef struct s_op
+{
+	char			*op;
+	struct s_op		*next;
+}					t_op;
 long long	ft_atoi(const char *str);
 char		*ft_strdup(const char *s);
 size_t		ft_strlen(const char *s);
@@ -122,5 +127,6 @@ void		optimize_operation(t_oper *op);
 void		handle_operation_list(t_oper *op);
 int			already_sort(t_struct *head);
 void		init_stack(t_struct *head_a, int argc, char **argv);
-
+void		merge_by_case(t_oper *op, int index, int merge_case);
+int			r_check(t_oper	*temp);
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: minhkim <minhkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 10:48:45 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/02 16:16:36 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/05 15:01:00 by minhkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,20 @@ char	*ft_strdup(const char *s)
 	}
 	ptr[i] = '\0';
 	return (ptr);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int			i;
+
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (0);
+		i++;
+	}
+	if (s1[i] == '\0' && s2[i] == '\0')
+		return (1);
+	return (0);
 }
