@@ -1,18 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 12:14:04 by jung-lee          #+#    #+#             */
-/*   Updated: 2020/12/18 15:05:14 by jung-lee         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static int		put_new_line(char **backup, char **line, int fd)
+static int	put_new_line(char **backup, char **line, int fd)
 {
 	char		*temp;
 	int			i;
@@ -37,7 +26,7 @@ static int		put_new_line(char **backup, char **line, int fd)
 	return (1);
 }
 
-static int		get_result(char **backup, char **line, ssize_t rd_size, int fd)
+static int	get_result(char **backup, char **line, ssize_t rd_size, int fd)
 {
 	if (rd_size < 0)
 		return (-1);
@@ -51,7 +40,7 @@ static int		get_result(char **backup, char **line, ssize_t rd_size, int fd)
 	return (put_new_line(backup, line, fd));
 }
 
-int				get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static char	*backup[255];
 	char		buf[BUFFER_SIZE + 1];
@@ -60,7 +49,8 @@ int				get_next_line(int fd, char **line)
 
 	if (fd < 0 || line == NULL || BUFFER_SIZE <= 0)
 		return (-1);
-	while ((rd_size = read(fd, buf, BUFFER_SIZE)) > 0)
+	rd_size = read(fd, buf, BUFFER_SIZE);
+	while (rd_size > 0)
 	{
 		buf[rd_size] = '\0';
 		if (!backup[fd])
@@ -73,6 +63,7 @@ int				get_next_line(int fd, char **line)
 		}
 		if (ft_strchr(backup[fd], '\n'))
 			break ;
+		rd_size = read(fd, buf, BUFFER_SIZE);
 	}
 	return (get_result(backup, line, rd_size, fd));
 }

@@ -1,47 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: minhkim <minhkim@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 16:45:12 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/02 19:35:31 by minhkim          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "get_next_line.h"
-
-// size_t	ft_strlen(const char *str)
-// {
-// 	const char *temp;
-
-// 	temp = str;
-// 	while (*temp != '\0')
-// 	{
-// 		temp++;
-// 	}
-// 	return (temp - str);
-// }
-
-// char	*ft_strdup(const char *s)
-// {
-// 	size_t	size;
-// 	char	*ptr;
-// 	int		i;
-
-// 	size = ft_strlen(s);
-// 	if (!(ptr = (char *)malloc(sizeof(char) * size + 1)))
-// 		return (NULL);
-// 	i = 0;
-// 	while (s[i])
-// 	{
-// 		ptr[i] = s[i];
-// 		i++;
-// 	}
-// 	ptr[i] = '\0';
-// 	return (ptr);
-// }
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -53,7 +11,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	if (!(result = (char *)malloc(sizeof(char) * (len1 + len2) + 1)))
+	result = (char *)malloc(sizeof(char) * (len1 + len2) + 1);
+	if (!(result))
 		return (NULL);
 	i = 0;
 	while (i < len1)
@@ -93,7 +52,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*result;
 	size_t	i;
 
-	if (!(result = (char *)malloc(sizeof(char) * len + 1)))
+	result = (char *)malloc(sizeof(char) * len + 1);
+	if (!(result))
 		return (NULL);
 	i = 0;
 	if (start > ft_strlen(s))
