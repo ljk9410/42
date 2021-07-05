@@ -6,13 +6,13 @@
 /*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 13:15:46 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/01 12:27:34 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/02 16:39:09 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_struct		*find_last_before(t_struct *node)
+t_struct	*find_last_before(t_struct *node)
 {
 	t_struct	*temp;
 
@@ -24,7 +24,7 @@ t_struct		*find_last_before(t_struct *node)
 	return (temp);
 }
 
-void			rra(t_struct *head_a, t_oper *op)
+void	rra(t_struct *head_a, t_oper *op)
 {
 	t_struct	*temp;
 	t_struct	*last;
@@ -42,7 +42,7 @@ void			rra(t_struct *head_a, t_oper *op)
 	add_op_list(op, "rra");
 }
 
-void			rrb(t_struct *head_b, t_oper *op)
+void	rrb(t_struct *head_b, t_oper *op)
 {
 	t_struct	*temp;
 	t_struct	*last;
@@ -60,7 +60,7 @@ void			rrb(t_struct *head_b, t_oper *op)
 	add_op_list(op, "rrb");
 }
 
-void			rrr(t_struct *head_a, t_struct *head_b, t_oper *op)
+void	rrr(t_struct *head_a, t_struct *head_b, t_oper *op)
 {
 	rra(head_a, op);
 	rrb(head_b, op);
