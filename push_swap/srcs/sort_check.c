@@ -16,12 +16,12 @@ int sort_check_a(t_struct *head_a)
 	return (1);
 }
 
-int sort_check_b(t_struct *head_a)
+int sort_check_b(t_struct *head_b)
 {
 	t_struct	*temp;
 	int			n;
 
-	temp = head_a->next;
+	temp = head_b->next;
 	while (temp->next != NULL)
 	{
 		n = temp->value;
