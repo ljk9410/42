@@ -6,12 +6,11 @@
 /*   By: minhkim <minhkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 18:47:03 by minhkim           #+#    #+#             */
-/*   Updated: 2021/07/02 20:35:44 by minhkim          ###   ########.fr       */
+/*   Updated: 2021/07/05 16:14:30 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
 
 void	select_function(char *input, t_struct *head_a,
 t_struct *head_b, t_oper *op)

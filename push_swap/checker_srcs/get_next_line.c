@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/05 16:39:56 by jung-lee          #+#    #+#             */
+/*   Updated: 2021/07/05 16:40:00 by jung-lee         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/push_swap.h"
 
 static int	put_new_line(char **backup, char **line, int fd)
 {
