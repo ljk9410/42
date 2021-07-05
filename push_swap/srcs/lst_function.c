@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_function.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jung-lee <jung-lee@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: minhkim <minhkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 15:43:39 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/02 16:34:14 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/05 14:43:50 by minhkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,28 @@ int	size_of_list(t_struct *list)
 		temp = temp->next;
 	}
 	return (n);
+}
+
+t_oper	*find_op_last(t_oper *node)
+{
+	t_oper		*temp;
+
+	temp = node;
+	if (!temp)
+		return (NULL);
+	while (temp->next != NULL)
+		temp = temp->next;
+	return (temp);
+}
+
+void	add_op_list(t_oper *op, char *operation)
+{
+	t_oper		*new;
+	t_oper		*temp;
+
+	new = (t_oper *)malloc(sizeof(t_oper));
+	temp = find_op_last(op);
+	temp->next = new;
+	new->operation = ft_strdup(operation);
+	new->next = NULL;
 }
