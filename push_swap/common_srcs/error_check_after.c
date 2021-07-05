@@ -26,7 +26,7 @@ int	error_check_dup(t_struct *head)
 		temp_j = temp_i->next;
 		if (temp_j->next == NULL && i == temp_j->value)
 			return (1);
-		while (temp_j->next != NULL)
+		while (temp_j != NULL)
 		{
 			j = temp_j->value;
 			if (i == j)
