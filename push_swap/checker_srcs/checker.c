@@ -6,7 +6,7 @@
 /*   By: minhkim <minhkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 18:47:03 by minhkim           #+#    #+#             */
-/*   Updated: 2021/07/05 16:14:30 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/06 12:58:30 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_struct *head_b, t_oper *op)
 		sa(head_a, op);
 	else if (ft_strcmp(input, "sb"))
 		sb(head_b, op);
-	else if (ft_strcmp(input, "pa"))
+	else if (ft_strcmp(input, "ss"))
 		ss(head_a, head_b, op);
 	else if (ft_strcmp(input, "ra"))
 		ra(head_a, op);
@@ -69,7 +69,6 @@ int	main(int argc, char **argv)
 	t_struct			*head_a;
 	t_struct			*head_b;
 	t_oper				*op;
-	t_oper				*temp;
 
 	if (error_check_before(argc, argv))
 		return (write_error());
@@ -84,9 +83,6 @@ int	main(int argc, char **argv)
 	}
 	select_function(oper, head_a, head_b, op);
 	free(oper);
-	temp = op->next;
-	while (temp != NULL)
-		temp = temp->next;
 	print_result(head_a);
 	free_all(head_a, head_b);
 	return (0);
