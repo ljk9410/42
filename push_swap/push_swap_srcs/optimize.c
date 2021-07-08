@@ -6,7 +6,7 @@
 /*   By: minhkim <minhkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:16:31 by minhkim           #+#    #+#             */
-/*   Updated: 2021/07/05 15:44:12 by minhkim          ###   ########.fr       */
+/*   Updated: 2021/07/08 13:44:07 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	return_merge_case(t_oper *op)
 	t_oper		*temp;
 
 	temp = op;
-	if (ft_strcmp(temp->operation, "rra")
+	if (ft_strcmp(temp->operation, "ra")
 		&& ft_strcmp(temp->next->operation, "rb"))
 		return (1);
 	if (ft_strcmp(temp->operation, "rb")

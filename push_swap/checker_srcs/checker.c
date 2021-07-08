@@ -6,11 +6,12 @@
 /*   By: minhkim <minhkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 18:47:03 by minhkim           #+#    #+#             */
-/*   Updated: 2021/07/06 12:58:30 by jung-lee         ###   ########.fr       */
+/*   Updated: 2021/07/08 12:48:29 by jung-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <stdio.h>
 
 void	select_function(char *input, t_struct *head_a,
 t_struct *head_b, t_oper *op)
@@ -83,6 +84,14 @@ int	main(int argc, char **argv)
 	}
 	select_function(oper, head_a, head_b, op);
 	free(oper);
+/*
+	t_struct *temp = head_a->next;
+	while (temp != NULL)
+	{
+		printf("%d\n", temp->value);
+		temp = temp->next;
+	}
+*/
 	print_result(head_a);
 	free_all(head_a, head_b);
 	return (0);

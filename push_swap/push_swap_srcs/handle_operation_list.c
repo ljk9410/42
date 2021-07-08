@@ -18,10 +18,16 @@ void	print_op_list(t_oper *op)
 
 void	optimize_operation(t_oper *op)
 {
-	while (merge_operation(op))
-		;
-	while (delete_operation(op))
-		;
+	while (1)
+	{
+		if (merge_operation(op) == 0)
+			break ;
+	}
+	while (1)
+	{
+		if (delete_operation(op) == 0)
+			break ;
+	}
 }
 
 void	handle_operation_list(t_oper *op)
