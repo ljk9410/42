@@ -26,6 +26,9 @@ void	optimize_operation(t_oper *op)
 
 void	handle_operation_list(t_oper *op)
 {
+	t_oper *temp;
+
+	temp = op->next;
 	optimize_operation(op);
 	print_op_list(op);
 }

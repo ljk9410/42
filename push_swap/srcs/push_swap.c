@@ -6,7 +6,7 @@
 /*   By: minhkim <minhkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:28:44 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/05 15:15:21 by minhkim          ###   ########.fr       */
+/*   Updated: 2021/07/06 15:04:06 by minhkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	push_swap(t_struct *head_a, t_struct *head_b, t_oper *op)
 	else
 		a_to_b(head_a, head_b, n, op);
 }
+
+#include <stdio.h>
 
 int	main(int argc, char **argv)
 {

@@ -6,7 +6,7 @@
 /*   By: minhkim <minhkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 10:23:52 by jung-lee          #+#    #+#             */
-/*   Updated: 2021/07/05 15:45:25 by minhkim          ###   ########.fr       */
+/*   Updated: 2021/07/06 16:15:12 by minhkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ void	delete_op_list_in_middle(t_oper *op, int num)
 {
 	t_oper		*temp;
 	t_oper		*temp_op_node;
-	int			index;
 
-	index = 1;
 	temp = op->next;
 	if (num == 1)
 	{
@@ -50,20 +48,16 @@ void	add_op_list_in_middle(t_oper *op, t_oper *node, int num)
 {
 	t_oper		*temp;
 	t_oper		*temp_op_node;
-	int			index;
 
-	index = 1;
 	temp = op->next;
 	if (num == 1)
 	{
-		temp = node;
+		op->next = node;
 		return ;
 	}
-	while (temp != NULL && index < num - 1)
-	{
+	num = num - 2;
+	while (num--)
 		temp = temp->next;
-		index++;
-	}
 	temp_op_node = temp->next;
 	temp->next = node;
 	node->next = temp_op_node;
@@ -74,19 +68,19 @@ int	r_check(t_oper	*temp)
 	if (ft_strcmp(temp->operation, "ra")
 		&& ft_strcmp(temp->next->operation, "rra"))
 		return (1);
-	if (ft_strcmp(temp->operation, "rra")
+	else if (ft_strcmp(temp->operation, "rra")
 		&& ft_strcmp(temp->next->operation, "ra"))
 		return (1);
-	if (ft_strcmp(temp->operation, "rb")
+	else if (ft_strcmp(temp->operation, "rb")
 		&& ft_strcmp(temp->next->operation, "rrb"))
 		return (1);
-	if (ft_strcmp(temp->operation, "rrb")
+	else if (ft_strcmp(temp->operation, "rrb")
 		&& ft_strcmp(temp->next->operation, "rb"))
 		return (1);
-	if (ft_strcmp(temp->operation, "rr")
+	else if (ft_strcmp(temp->operation, "rr")
 		&& ft_strcmp(temp->next->operation, "rrr"))
 		return (1);
-	if (ft_strcmp(temp->operation, "rrr")
+	else if (ft_strcmp(temp->operation, "rrr")
 		&& ft_strcmp(temp->next->operation, "rr"))
 		return (1);
 	return (0);

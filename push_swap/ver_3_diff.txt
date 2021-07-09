@@ -1,0 +1,170 @@
+93c93
+< ra
+---
+> pb
+111d110
+< rra
+121,127d119
+< pb
+< rra
+< rra
+< rra
+< pb
+< pb
+< ra
+134a127
+> rra
+137,138c130,131
+< sb
+< pa
+---
+> pb
+> rra
+140,143d132
+< sb
+< rb
+< sb
+< rrb
+151,152d139
+< pa
+< rrb
+154,159c141
+< ra
+< sa
+< rra
+< sa
+< rb
+< sb
+---
+> pa
+173d154
+< pa
+178d158
+< pb
+181a162
+> pb
+186d166
+< sa
+188,189c168
+< sa
+< sb
+---
+> rb
+191a171
+> rrb
+194a175,176
+> rb
+> rb
+195a178,179
+> rrb
+> rrb
+197,201c181,184
+< sa
+< rra
+< sb
+< rb
+< sb
+---
+> pb
+> pb
+> rr
+> pa
+203d185
+< sb
+205a188,193
+> rb
+> rb
+> pa
+> rrb
+> pa
+> rrb
+225c213
+< pa
+---
+> rb
+243a232
+> rrb
+248d236
+< pb
+253d240
+< ra
+256c243
+< rra
+---
+> pb
+262,263d248
+< ra
+< ra
+264a250
+> ra
+267d252
+< rra
+271d255
+< sa
+274d257
+< sb
+276,277d258
+< sb
+< rrb
+278a260
+> rrb
+288c270
+< sa
+---
+> pb
+290,293c272,274
+< sa
+< rra
+< rb
+< sb
+---
+> pb
+> rr
+> pa
+295c276,277
+< sb
+---
+> pa
+> rb
+297a280
+> rrb
+306a290,291
+> rb
+> rb
+311c296,297
+< pb
+---
+> rrb
+> rrb
+312a299
+> pb
+316a304,305
+> pb
+> pb
+319a309,314
+> rb
+> rb
+> pa
+> rrb
+> rrb
+> pa
+323a319
+> pa
+325a322,328
+> rrb
+> rrb
+> rrb
+> pb
+> ra
+> pb
+> rr
+327a331,335
+> pa
+> pa
+> rb
+> rb
+> pa
+331c339
+< sa
+---
+> pb
