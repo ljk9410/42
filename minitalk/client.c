@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   client.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kiskim <kiskim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/28 16:18:32 by kiskim            #+#    #+#             */
+/*   Updated: 2021/08/28 16:18:48 by kiskim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./minitalk.h"
 
 char	*char_to_binary_str(char c)
@@ -54,6 +66,11 @@ int		main(int argc, char **argv)
 	if (argc != 3)
 		return (-1);
 	server_pid = ft_atoi(argv[1]);
+	if (server_pid > 32768)
+	{
+		write(1, "PID RANGE IS OVER\n", 18);
+		exit(0);
+	}
 	send_message_to_server(server_pid, argv[2]);
 	return (0);
 }
