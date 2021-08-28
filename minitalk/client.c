@@ -50,7 +50,7 @@ void	send_message_to_server(int server_pid, char *message)
 			usleep(100);
 			if (binary_str[j] == '0')
 				kill(server_pid, SIGUSR1);
-			else 
+			else
 				kill(server_pid, SIGUSR2);
 			j++;
 		}
@@ -59,7 +59,7 @@ void	send_message_to_server(int server_pid, char *message)
 	}
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int		server_pid;
 
@@ -74,4 +74,3 @@ int		main(int argc, char **argv)
 	send_message_to_server(server_pid, argv[2]);
 	return (0);
 }
- 

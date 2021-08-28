@@ -18,7 +18,7 @@ int	ft_atoi(const char *str)
 	int	sign;
 
 	while (*str == '\n' || *str == '\t' || *str == ' '
-			|| *str == '\v' || *str == '\f' || *str == '\r')
+		|| *str == '\v' || *str == '\f' || *str == '\r')
 		str++;
 	sign = 1;
 	if (*str == '+')
@@ -40,7 +40,7 @@ int	ft_atoi(const char *str)
 	return (sign * n);
 }
 
-long long		numdigit(long long n)
+long long	numdigit(long long n)
 {
 	long long	digit;
 
@@ -54,7 +54,7 @@ long long		numdigit(long long n)
 	return (digit);
 }
 
-void			putnum(long long num, int fd)
+void	putnum(long long num, int fd)
 {
 	long long	digit;
 	long long	n;
@@ -74,7 +74,7 @@ void			putnum(long long num, int fd)
 	}
 }
 
-void			ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	long long	num;
 
@@ -91,7 +91,7 @@ void			ft_putnbr_fd(int n, int fd)
 
 size_t	ft_strlen(const char *str)
 {
-	const char *temp;
+	const char	*temp;
 
 	temp = str;
 	while (*temp != '\0')
